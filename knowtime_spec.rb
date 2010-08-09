@@ -1,8 +1,9 @@
-require "kt_timer"
-describe "KTTimer" do
-   it "should start with a time of 0" do
-      timer = KTTimer.new
-      timer.minutes.should == 0
+require "kt_stopwatch"
+describe "KTStopWatch" do
+   it "should start with 0 minutes time elapsed" do
+      sw = KTStopWatch.new
+      sw.get_time_elapsed.should == 0
    end
-   it "should return the time elapsed when stopped"
+   it "should record minutes when started"
+   it "should return the time in minutes elapsed when minutes called"
 end 
