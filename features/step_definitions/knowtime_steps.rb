@@ -29,9 +29,10 @@ Given /^the application is not running$/ do
 end
 
 When /^I start the application$/ do
-  KnowTime::KnowTime.new.start(output)
+  know_time = KnowTime::KnowTime.new(output)
+  know_time.start
 end
 
-Then /^I should see "([^"]*)"$/ do |arg1|
+Then /^I should see "([^"]*)"$/ do |message|
   output.messages.should include(message)
 end
