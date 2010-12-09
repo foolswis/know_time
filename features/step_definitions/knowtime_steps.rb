@@ -28,9 +28,18 @@ end
 Given /^the application is not running$/ do
 end
 
+Given /^I am not yet recording time$/ do
+  know_time = KnowTime::KnowTime.new(output)
+  know_time.start
+end
+
 When /^I start the application$/ do
   know_time = KnowTime::KnowTime.new(output)
   know_time.start
+end
+
+When /^I indicate to mark the start of recording$/ do
+  know_time.start_stopwatch
 end
 
 Then /^I should see "([^"]*)"$/ do |message|
