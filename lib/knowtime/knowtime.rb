@@ -6,6 +6,7 @@ module KnowTime
 
     def start
       @output.puts 'Welcome to Know Time!'
+      @output.puts 'Start recording? (y/n)'
     end
   end
 end
