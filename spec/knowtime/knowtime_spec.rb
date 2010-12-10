@@ -3,10 +3,9 @@ require 'timecop'
 
 module KnowTime
   describe KnowTime do
+    let(:output) { double('output').as_null_object }
+    let(:know_time) { KnowTime.new(output) }
     describe "#start" do
-      let(:output) { double('output').as_null_object }
-      let(:know_time) { KnowTime.new(output) }
-
       it "sends a welcome message" do
         output.should_receive(:puts).with('Welcome to Know Time!')
         know_time.start
@@ -19,7 +18,6 @@ module KnowTime
     end
 
     describe "#start recording" do
-      let(:know_time) { KnowTime.new }
       it "records the date and time, and the status is recording" do
         new_time = Time.local(2010, 12, 9, 10, 22, 0)
         Timecop.freeze(new_time)

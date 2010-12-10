@@ -1,6 +1,6 @@
 module KnowTime
   class KnowTime
-    def initialize(output=nil)
+    def initialize(output)
       @output = output
     end
 
