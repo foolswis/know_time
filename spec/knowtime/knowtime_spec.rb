@@ -19,13 +19,14 @@ module KnowTime
     end
 
     describe "#start recording" do
-      let(:know_time) { KnowTime.new() }
+      let(:know_time) { KnowTime.new }
       it "records the date and time, and the status is recording" do
         new_time = Time.local(2010, 12, 9, 10, 22, 0)
         Timecop.freeze(new_time)
         know_time.start_recording
-#        know_time.status.should == 'recording'
-#        know_time.recorded_start_time.should == Time.now
+        know_time.recording_status.should == 'recording'
+#        know_time.recording_start_time.should == Time.now
+        Timecop.return
       end
     end
   end

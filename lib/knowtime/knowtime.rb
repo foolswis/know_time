@@ -10,6 +10,12 @@ module KnowTime
     end
 
     def start_recording
+      @recording_status = 'recording'
+      @recording_start_time = Time.now
+    end
+
+    def recording_status
+      @recording_status
     end
   end
 end
