@@ -39,6 +39,8 @@ When /^I start the application$/ do
 end
 
 When /^I indicate to mark the start of recording$/ do
+  know_time = KnowTime::KnowTime.new(output)
+  know_time.start
   know_time.start_stopwatch
 end
 

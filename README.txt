@@ -46,6 +46,8 @@ gherkin-2.3.2
 builder-3.0.0
 cucumber-0.10.0
 
+timecop-0.3.5
+
 === Reference Books
 
 the-rspec-book_p1_0.pdf

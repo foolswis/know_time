@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'timecop'
 
 module KnowTime
   describe KnowTime do
@@ -14,6 +15,17 @@ module KnowTime
       it "prompts to start recording" do
         output.should_receive(:puts).with('Start recording? (y/n)')
         know_time.start
+      end
+    end
+
+    describe "#start recording" do
+      let(:know_time) { KnowTime.new() }
+      it "records the date and time, and the status is recording" do
+        new_time = Time.local(2010, 12, 9, 10, 22, 0)
+        Timecop.freeze(new_time)
+        know_time.start_recording
+#        know_time.status.should == 'recording'
+#        know_time.recorded_start_time.should == Time.now
       end
     end
   end
